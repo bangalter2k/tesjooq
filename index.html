@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dados do CNPJ 32.758.438/0001‑20</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; max-width: 800px; }
+    th, td { padding: 10px; border: 1px solid #ccc; }
+    th { background-color: #f2f2f2; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Dados da Empresa (CNPJ)</h1>
+  <table id="dadosCNPJ"></table>
+
+  <script>
+    const dados = {
+      "CNPJ": "32.758.438/0001-20",
+      "Razão Social": "Mercado e Açougue Pimentel Ltda",
+      "Tipo": "Matriz",
+      "Situação Cadastral": "Ativa (desde 13/02/2019)",
+      "Natureza Jurídica": "Sociedade Empresária Limitada (2062)",
+      "Porte": "Empresa de Pequeno Porte",
+      "Capital Social": "R$ 5.000,00",
+      "Data de Abertura": "13/02/2019",
+      "Atividade Principal": "4712‑1/00 – Comércio varejista de mercadorias em geral com predominância de produtos alimentícios",
+      "Atividades Secundárias": [
+        "47.21‑1/02 – Padaria e confeitaria com predominância de revenda",
+        "47.22‑9/01 – Comércio varejista de carnes – açougues"
+      ],
+      "Endereço": "Rua Arthur Ropelato, 315 – Bairro Santa Luzia, Jaraguá do Sul – SC – CEP 89267‑010",
+      "Telefone": "(47) 99759‑2859",
+      "E-mail": "mercadopimentel.sc@gmail.com",
+      "Sócio-Administrador": "Evandra Gonçalves de Araújo (desde 20/06/2023)"
+    };
+
+    const tabela = document.getElementById("dadosCNPJ");
+
+    for (let chave in dados) {
+      const linha = document.createElement("tr");
+      const th = document.createElement("th");
+      const td = document.createElement("td");
+
+      th.textContent = chave;
+
+      if (Array.isArray(dados[chave])) {
+        td.innerHTML = dados[chave].map(item => `<li>${item}</li>`).join("");
+      } else {
+        td.textContent = dados[chave];
+      }
+
+      linha.appendChild(th);
+      linha.appendChild(td);
+      tabela.appendChild(linha);
+    }
+  </script>
+</body>
+</html>
